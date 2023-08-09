@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+
+  database:
+   image: mysql:8.0.22
+   ports:
+     - "3307:3306"
+   volumes:
+     - datafiles:/var/lib/mysql
+   restart: always
+   environment: 
+     MYSQL_ROOT_PASSWORD: Root0++
+     MYSQL_USER: Oceanica@Admin
+     MYSQL_PASSWORD: Oceanica@123
+     MYSQL_DATABASE: OceanicaDB
+
+  oceanica.api:
+   image: ${DOCKER_REGISTRY-}oceanicaapi
+   build:
+    context: .
+    dockerfile: Oceanica.API/Dockerfile
+   depends_on: 
+    - database
+   
+  oceanica-ui:
+   image: oceanica-ui
+   build:
+    context: ./oceanica-ui
+    dockerfile: Dockerfile
+
+volumes:
+  datafiles:

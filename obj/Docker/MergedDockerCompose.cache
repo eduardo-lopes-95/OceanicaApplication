@@ -1,0 +1,77 @@
+name: dockercompose17863239795482685928
+services:
+  database:
+    environment:
+      MYSQL_DATABASE: OceanicaDB
+      MYSQL_PASSWORD: Oceanica@123
+      MYSQL_ROOT_PASSWORD: Root0++
+      MYSQL_USER: Oceanica@Admin
+    image: mysql:8.0.22
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 3306
+      published: "3307"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: datafiles
+      target: /var/lib/mysql
+      volume: {}
+  oceanica-ui:
+    build:
+      context: C:\Users\Eduardo Sabino\Project\Oceanica.API\oceanica-ui
+      dockerfile: Dockerfile
+    image: oceanica-ui
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 3000
+      published: "5001"
+      protocol: tcp
+  oceanica.api:
+    build:
+      context: C:\Users\Eduardo Sabino\Project\Oceanica.API
+      dockerfile: Oceanica.API/Dockerfile
+    depends_on:
+      database:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: oceanicaapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5000"
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 443
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\Eduardo Sabino\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\Eduardo Sabino\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: dockercompose17863239795482685928_default
+volumes:
+  datafiles:
+    name: dockercompose17863239795482685928_datafiles
