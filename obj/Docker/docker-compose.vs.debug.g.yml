@@ -12,19 +12,21 @@ services:
     environment:
       - DOTNET_USE_POLLING_FILE_WATCHER=1
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
-      - NUGET_FALLBACK_PACKAGES=
+      - NUGET_FALLBACK_PACKAGES=/root/.nuget/fallbackpackages
     volumes:
-      - C:\Users\Eduardo Sabino\Project\Oceanica.API\Oceanica.API:/app
-      - C:\Users\Eduardo Sabino\Project\Oceanica.API:/src
-      - C:\Users\Eduardo Sabino\vsdbg\vs2017u5:/remote_debugger:rw
-      - C:\Users\Eduardo Sabino\.nuget\packages\:/root/.nuget/packages:ro
+      - C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\Oceanica.API:/app
+      - C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication:/src
+      - C:\Users\07-05-007\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\07-05-007\.nuget\packages\:/root/.nuget/packages:ro
+      - C:\Program Files\dotnet\sdk\NuGetFallbackFolder:/root/.nuget/fallbackpackages:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net6.0:/TokenService.Proxy:ro
 
     entrypoint: tail -f /dev/null
     labels:
       com.microsoft.visualstudio.debuggee.program: "dotnet"
-      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages  \"/app/bin/Debug/net6.0/Oceanica.API.dll\""
+      com.microsoft.visualstudio.debuggee.arguments: " --additionalProbingPath /root/.nuget/packages --additionalProbingPath /root/.nuget/fallbackpackages  \"\""
       com.microsoft.visualstudio.debuggee.workingdirectory: "/app"
       com.microsoft.visualstudio.debuggee.killprogram: "/bin/sh -c \"if PID=$$(pidof dotnet); then kill $$PID; fi\""
     tty: true

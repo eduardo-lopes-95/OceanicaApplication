@@ -1,5 +1,17 @@
-name: dockercompose17863239795482685928
+name: dockercompose5913192392050431473
 services:
+  client:
+    build:
+      context: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\client
+      dockerfile: Dockerfile
+    image: client
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 3000
+      published: "5001"
+      protocol: tcp
   database:
     environment:
       MYSQL_DATABASE: OceanicaDB
@@ -20,21 +32,9 @@ services:
       source: datafiles
       target: /var/lib/mysql
       volume: {}
-  oceanica-ui:
-    build:
-      context: C:\Users\Eduardo Sabino\Project\Oceanica.API\oceanica-ui
-      dockerfile: Dockerfile
-    image: oceanica-ui
-    networks:
-      default: null
-    ports:
-    - mode: ingress
-      target: 3000
-      published: "5001"
-      protocol: tcp
   oceanica.api:
     build:
-      context: C:\Users\Eduardo Sabino\Project\Oceanica.API
+      context: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication
       dockerfile: Oceanica.API/Dockerfile
     depends_on:
       database:
@@ -58,20 +58,35 @@ services:
       protocol: tcp
     volumes:
     - type: bind
-      source: C:\Users\Eduardo Sabino\AppData\Roaming/Microsoft/UserSecrets
+      source: C:\Users\07-05-007\AppData\Roaming/Microsoft/UserSecrets
       target: /root/.microsoft/usersecrets
       read_only: true
       bind:
         create_host_path: true
     - type: bind
-      source: C:\Users\Eduardo Sabino\AppData\Roaming/ASP.NET/Https
+      source: C:\Users\07-05-007\AppData\Roaming/ASP.NET/Https
       target: /root/.aspnet/https
       read_only: true
       bind:
         create_host_path: true
+  proxy:
+    image: nginx:mainline
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "80"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\nginx.conf
+      target: /etc/ngnix/ngnix.conf
+      bind:
+        create_host_path: true
 networks:
   default:
-    name: dockercompose17863239795482685928_default
+    name: dockercompose5913192392050431473_default
 volumes:
   datafiles:
-    name: dockercompose17863239795482685928_datafiles
+    name: dockercompose5913192392050431473_datafiles

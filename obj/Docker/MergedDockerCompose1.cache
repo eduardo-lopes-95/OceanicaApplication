@@ -1,5 +1,17 @@
-name: dockercompose17863239795482685928
+name: dockercompose5913192392050431473
 services:
+  client:
+    build:
+      context: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\client
+      dockerfile: Dockerfile
+    image: client
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 3000
+      published: "5001"
+      protocol: tcp
   database:
     environment:
       MYSQL_DATABASE: OceanicaDB
@@ -20,21 +32,9 @@ services:
       source: datafiles
       target: /var/lib/mysql
       volume: {}
-  oceanica-ui:
-    build:
-      context: C:\Users\Eduardo Sabino\Project\Oceanica.API\oceanica-ui
-      dockerfile: Dockerfile
-    image: oceanica-ui
-    networks:
-      default: null
-    ports:
-    - mode: ingress
-      target: 3000
-      published: "5001"
-      protocol: tcp
   oceanica.api:
     build:
-      context: C:\Users\Eduardo Sabino\Project\Oceanica.API
+      context: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication
       dockerfile: Oceanica.API/Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
@@ -53,10 +53,11 @@ services:
       ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
       ASPNETCORE_URLS: https://+:443;http://+:80
       DOTNET_USE_POLLING_FILE_WATCHER: "1"
-      NUGET_FALLBACK_PACKAGES: ""
+      NUGET_FALLBACK_PACKAGES: /root/.nuget/fallbackpackages
     image: oceanicaapi:dev
     labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net6.0/Oceanica.API.dll"'
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages
+        --additionalProbingPath /root/.nuget/fallbackpackages  ""'
       com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
         dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet
@@ -77,41 +78,68 @@ services:
     tty: true
     volumes:
     - type: bind
-      source: C:\Users\Eduardo Sabino\Project\Oceanica.API\Oceanica.API
+      source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\TokenService.Proxy\linux-x64\net6.0
+      target: /TokenService.Proxy
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\Oceanica.API
       target: /app
       bind:
         create_host_path: true
     - type: bind
-      source: C:\Users\Eduardo Sabino\vsdbg\vs2017u5
+      source: C:\Users\07-05-007\vsdbg\vs2017u5
       target: /remote_debugger
       bind:
         create_host_path: true
     - type: bind
-      source: C:\Users\Eduardo Sabino\AppData\Roaming/ASP.NET/Https
+      source: C:\Users\07-05-007\AppData\Roaming/ASP.NET/Https
       target: /root/.aspnet/https
       read_only: true
       bind:
         create_host_path: true
     - type: bind
-      source: C:\Users\Eduardo Sabino\AppData\Roaming/Microsoft/UserSecrets
+      source: C:\Users\07-05-007\AppData\Roaming/Microsoft/UserSecrets
       target: /root/.microsoft/usersecrets
       read_only: true
       bind:
         create_host_path: true
     - type: bind
-      source: C:\Users\Eduardo Sabino\.nuget\packages\
+      source: C:\Program Files\dotnet\sdk\NuGetFallbackFolder
+      target: /root/.nuget/fallbackpackages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\07-05-007\.nuget\packages\
       target: /root/.nuget/packages
       read_only: true
       bind:
         create_host_path: true
     - type: bind
-      source: C:\Users\Eduardo Sabino\Project\Oceanica.API
+      source: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication
       target: /src
+      bind:
+        create_host_path: true
+  proxy:
+    image: nginx:mainline
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "80"
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\nginx.conf
+      target: /etc/ngnix/ngnix.conf
       bind:
         create_host_path: true
 networks:
   default:
-    name: dockercompose17863239795482685928_default
+    name: dockercompose5913192392050431473_default
 volumes:
   datafiles:
-    name: dockercompose17863239795482685928_datafiles
+    name: dockercompose5913192392050431473_datafiles

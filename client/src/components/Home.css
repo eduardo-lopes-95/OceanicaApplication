@@ -1,0 +1,64 @@
+/* Home.css */
+
+/* Defina a fonte elegante (você pode substituir pelo nome de uma fonte da sua escolha) */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-width: 600px; /* Defina uma largura máxima para o container */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+ul {
+    font-size: 16px;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Estilização para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    ul {
+        font-size: 14px;
+        margin-left: 15px;
+        padding-left: 15px;
+    }
+}

@@ -1,27 +1,27 @@
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Oceanica.API.deps.json
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Oceanica.API.runtimeconfig.json
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\appsettings.Development.json
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\appsettings.json
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Oceanica.API.exe
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Oceanica.API.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Microsoft.EntityFrameworkCore.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\AutoMapper.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Swashbuckle.AspNetCore.Annotations.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Microsoft.EntityFrameworkCore.Proxies.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Microsoft.OpenApi.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Castle.Core.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\MySqlConnector.dll
-C:\Users\Eduardo Sabino\Project\Oceanica.API\bin\Debug\Oceanica.API.pdb
-C:\Users\Eduardo Sabino\Project\Oceanica.API\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
-C:\Users\Eduardo Sabino\Project\Oceanica.API\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
-C:\Users\Eduardo Sabino\Project\Oceanica.API\obj\Debug\docker-compose.dcproj.CopyComplete
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Oceanica.API.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Oceanica.API.deps.json
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Oceanica.API.runtimeconfig.json
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\appsettings.Development.json
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\appsettings.json
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Oceanica.API.exe
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Microsoft.EntityFrameworkCore.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\AutoMapper.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Castle.Core.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\MySqlConnector.dll
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\bin\Debug\Oceanica.API.pdb
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\obj\Debug\docker-compose.dcproj.CopyComplete

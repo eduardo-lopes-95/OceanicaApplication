@@ -11,7 +11,7 @@ using Oceanica.API.Data;
 namespace Oceanica.API.Migrations
 {
     [DbContext(typeof(OceanicaContext))]
-    [Migration("20230809001654_FirstMigration")]
+    [Migration("20230809190717_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
