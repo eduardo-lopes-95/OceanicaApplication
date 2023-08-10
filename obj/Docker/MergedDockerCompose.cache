@@ -1,23 +1,11 @@
-name: dockercompose5913192392050431473
+name: dockercompose8660656780943513164
 services:
-  client:
-    build:
-      context: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\client
-      dockerfile: Dockerfile
-    image: client
-    networks:
-      default: null
-    ports:
-    - mode: ingress
-      target: 3000
-      published: "5001"
-      protocol: tcp
   database:
     environment:
       MYSQL_DATABASE: OceanicaDB
-      MYSQL_PASSWORD: Oceanica@123
+      MYSQL_PASSWORD: Oceanica123
       MYSQL_ROOT_PASSWORD: Root0++
-      MYSQL_USER: Oceanica@Admin
+      MYSQL_USER: OceanicaAdmin
     image: mysql:8.0.22
     networks:
       default: null
@@ -34,7 +22,7 @@ services:
       volume: {}
   oceanica.api:
     build:
-      context: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication
+      context: C:\Users\Eduardo Sabino\Project\OceanicaApplication
       dockerfile: Oceanica.API/Dockerfile
     depends_on:
       database:
@@ -58,35 +46,20 @@ services:
       protocol: tcp
     volumes:
     - type: bind
-      source: C:\Users\07-05-007\AppData\Roaming/Microsoft/UserSecrets
+      source: C:\Users\Eduardo Sabino\AppData\Roaming/Microsoft/UserSecrets
       target: /root/.microsoft/usersecrets
       read_only: true
       bind:
         create_host_path: true
     - type: bind
-      source: C:\Users\07-05-007\AppData\Roaming/ASP.NET/Https
+      source: C:\Users\Eduardo Sabino\AppData\Roaming/ASP.NET/Https
       target: /root/.aspnet/https
       read_only: true
       bind:
         create_host_path: true
-  proxy:
-    image: nginx:mainline
-    networks:
-      default: null
-    ports:
-    - mode: ingress
-      target: 80
-      published: "80"
-      protocol: tcp
-    volumes:
-    - type: bind
-      source: C:\Users\07-05-007\Documents\Project\OceanicaApplicationG\OceanicaApplication\nginx.conf
-      target: /etc/ngnix/ngnix.conf
-      bind:
-        create_host_path: true
 networks:
   default:
-    name: dockercompose5913192392050431473_default
+    name: dockercompose8660656780943513164_default
 volumes:
   datafiles:
-    name: dockercompose5913192392050431473_datafiles
+    name: dockercompose8660656780943513164_datafiles

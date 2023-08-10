@@ -45,7 +45,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
+app.UseCors("AllowOrigin");
 
 app.MapControllerRoute(
     name: "default",
